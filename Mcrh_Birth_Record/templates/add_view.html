@@ -1,0 +1,192 @@
+{% extends "birth_record/base.html" %}
+{% load static %}
+{% block content %}
+{% include "birth_record/navbar.html" %}
+<div class="row card">
+    <form action='.' method="POST" class="col s12">
+    {% csrf_token %}
+        <h4>Birth Record</h4>
+        <div class="row">
+            <div class="input-field col s8">
+                <i class="material-icons prefix">fingerprint</i>
+                {{form2.serial_number_b1}}
+                {% comment %} <input required="true" id="icon_prefixb1" type="text" class="validate" name="serial_number_b1"> {% endcomment %}
+                <label for="icon_prefixb1">Serial Number B1 AC</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8">
+                <h6>1: NAME</h6><br>
+                <hr>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">person</i>
+                        {{form2.child_fname}}
+                        {% comment %} <input required="true" id="icon_prefixcf" type="text" class="validate" name="child_fname"> {% endcomment %}
+                        <label for="icon_prefixcf">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">person_outline</i>
+                        {{form2.child_mname}}
+                        {% comment %} <input required="true" id="icon_prefix2" type="text" class="validate" name="child_mname"> {% endcomment %}
+                        <label for="icon_prefix2">Middle Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">person</i>
+                        {{form2.child_lname}}
+                        {% comment %} <input required="true" id="icon_prefix3" type="text" class="validate" name="child_lname"> {% endcomment %}
+                        <label for="icon_prefix3">Last Name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <h6>2: DATE OF BIRTH</h6><br>
+                <hr>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">perm_contact_calendar</i>
+                    {{form2.dob}}
+                    {% comment %} <input required="true" type="text" id="icon_prefixdate" class="datepicker"  name="dob"> {% endcomment %}
+                    <label for="icon_prefixdate">Date</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+            <div class="col s12">
+                <div class="col s3">
+                    <h6 class="m-3">3: SEX</h6>
+                    <div class="input-field col s3">
+                        <div class="row">
+                            <div class="col s4">
+                                <label>
+                                    {% comment %} {{form2.sex}} {% endcomment %}
+                                    <input required="true" type="radio" value="Male" name="sex" class="with-gap"/>
+                                    <span>Male</span>
+                                </label>
+                            </div>
+                            <div class="col s4"></div>
+                            <div class="col s4">
+                                <label style="margin-left: 3.5rem;">
+                                    {% comment %} {{form2.sex}} {% endcomment %}
+                                    <input required="true" type="radio" value="Female" name="sex" class="with-gap"/>
+                                    <span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <h6 class="m-3">4: TYPE OF BIRTH</h6>
+                    <div class="input-field col s3">
+                        <div class="row">
+                            <div class="col s4">
+                                <label>
+                                    <input required="true" type="radio" value="Single" name="type_of_birth" class="with-gap"/>
+                                    <span>Single</span>
+                                </label>
+                            </div>
+                            <div class="col s4"></div>
+                            <div class="col s4">
+                                <label style="margin-left: 3.5rem;">
+                                    <input required="true" type="radio" value="Twin" name="type_of_birth" class="with-gap"/>
+                                    <span>Twin</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <h6 class="m-3">OTHER, SPECIFY</h6>
+                    {{form2.other_type_of_birth}}
+                    {% comment %} <input id="icon_prefixother" type="text" name="other_type_of_birth" class="" placeholder="Description..."> {% endcomment %}
+                </div>
+                <div class="col s3">
+                    <h6 class="m-3">5: NATURE OF BIRTH</h6>
+                    <div class="input-field col s3">
+                        <div class="row">
+                            <div class="col s4">
+                                <label>
+                                    <input required="true" type="radio" value="Born Alive" name="nature_of_birth" class="with-gap"/>
+                                    <span>Born Alive</span>
+                                </label>
+                            </div>
+                            <div class="col s4"></div>
+                            <div class="col s4">
+                                <label style="margin-left: 3.5rem;">
+                                    <input required="true" type="radio" value="Born Dead" name="nature_of_birth" class="with-gap"/>
+                                    <span>Born Dead</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <hr>
+                <h6 class="m-3">7: PLACE OF BIRTH</h6>
+                <div class="input-field col s8">
+                    {{form2.place_of_birth}}
+                    {% comment %} <input required="true" id="placeofbirth" type="text" class="validate" name="place_of_birth"> {% endcomment %}
+                    <label for="">Place Of Birth</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">
+                        Sub-location or Estate andTown or Health Instituition                    
+                    </span>
+                </div>
+                <div class="input-field col s4">
+                    {{form2.place_of_birth_sub_county}}
+                    {% comment %} <input required="true" id="sub-county" type="text" class="validate" name="place_of_birth_sub_county"> {% endcomment %}
+                    <label for="/">/</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Sub County</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <hr>
+                <h6 class="m-3">8: NAME OF MOTHER</h6>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">person</i>
+                    {{form.mother_fname}}
+                    <label for="icon_prefixf">First Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">person_outline</i>
+                    {{form.mother_mname}}
+                    <label for="icon_prefixf2">Middle Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">person</i>
+                    {{form.mother_lname}}
+                    <label for="icon_prefixf3">Last Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <hr>
+                <h6 class="m-3">NOTIFICATION ISSUED TO:</h6>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">person</i>
+                    {{form.notified_name}}
+                    <label for="icon_prefixfn">Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">fingerprint</i>
+                    {{form.notified_id}}
+                    <label for="icon_prefixf2id">ID NO.</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">perm_contact_calendar</i>
+                    {{form.notified_date}}
+                    <label for="icon_prefixdate2">Date</label>
+                </div>
+            </div>
+        </div>
+        <div class="row col s12 center">
+            <input type="submit" value="Submit" class="btn right" name="submit">
+        </div>
+    </form>
+</div>
+{% endblock %}

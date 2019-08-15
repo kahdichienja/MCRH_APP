@@ -1,0 +1,63 @@
+{% extends "birth_record/base.html" %}
+{% load static %}
+{% block content %}
+{% include "birth_record/navbar.html" %}
+<div class="row">
+    <div class="col s1"></div>
+        <div class="col s8">
+            <div class="card">
+                <div class="card-header white">
+                    <h5 style="padding: 1rem;">{{child.child_fname}} {{child.child_mname}} {{child.child_lname}}</h5>
+                </div>
+                <div class="card-content">
+                    <table>
+                        <tr>
+                            <th>Serial No.</th>
+                            <th>Sex</th>
+                            <th>Type Of Birth</th>
+                            <th>Nature Of Birth</th>
+                            <th>Date Of Birth</th>
+                        </tr>
+                        <tr>
+                            <td>{{child.serial_number_b1}}</td>
+                            <td>{{child.sex}}
+                            </td>
+                            <td>{{child.type_of_birth}}</td>
+                            <td>{{child.nature_of_birth}}</td>
+                            <td>{{child.dob}}</td>
+                        </tr>
+                    </table>
+                    <h6 class="blue-text">Other Type Of Birth</h6>
+                    <p>
+                        {{child.other_type_of_birth}}
+                    </p>
+                </div>
+                <div class="card-content">
+                    <h5>Parent Name: {{child.parent.mother_fname}} {{child.parent.mother_mname}} {{child.parent.mother_lname}}</h5>
+                    <h6>Notified To:</h6>
+                        <table>
+                            <tr>
+                                <th>Id No.</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                            </tr>
+                            <tr>
+                                <td>{{child.parent.notified_id}}</td>
+                                <td>{{child.parent.notified_name}}</td>
+                                <td>{{child.parent.notified_date}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">sync</i></a>
+                </div>
+            </div>
+        </div>
+    <div class="col s3">
+        <div class="card-body" style="margin: .5rem;">
+            <a href="#modal1" class="btn waves-effect waves-light modal-trigger">Search By ID No.
+                <i class="large material-icons">search</i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "birth_record/base.html" %}
+{% load static %}
+{% block content %}
+{% include "birth_record/navbar.html" %}
+{% if query %}
+    <p> You searched for {{query}}</p>
+{% else %}
+    Nothing Was Searched
+{% endif %}
+
+{% for child in child_list %}
+     may be
+{% endfor %}
+
+{% endblock %}

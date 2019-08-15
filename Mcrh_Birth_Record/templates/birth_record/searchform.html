@@ -1,0 +1,7 @@
+<form action="/Record/searchlist/" method="POST" style="padding: 4rem;">
+    {% csrf_token %}
+    <div class="">
+        <input type="text" class="hide-on-med-and-down" name="id_number" placeholder="Search By Parent ID No...">
+        <button type="submit" class="btn hide-on-med-and-down">Search</button>
+    </div>
+</form>
