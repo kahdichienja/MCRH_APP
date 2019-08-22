@@ -1,7 +1,7 @@
 autopep8==1.4.3
 certifi==2019.6.16
 chardet==3.0.4
-Django==2.1.7
+Django==2.1.11
 django-crispy-forms==1.7.2
 django-filter==2.1.0
 djangorestframework==3.9.2
