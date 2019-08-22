@@ -1,9 +1,696 @@
 {% extends "birth_record/base.html" %}
 {% load static %}
 {% block content %}
+<script>
+    {% block jquery %}
+        {% comment %} let endpoint = '/api/data/' {% endcomment %}
+        let endpoint2 = '/mega_search/'
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.default
+                {% comment %} console.log(defaultData) {% endcomment %}
+                let  ctx2 =  document.getElementById("pie");
+                let pie = new Chart(ctx2, {
+                    type: 'pie',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let quota_labels = []
+                quota_labels = data.quota_labels
+                defaultData = data.default
+                let  ctx =  document.getElementById("myChart");
+                let myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data:{
+                        labels: quota_labels,
+                        datasets:[{
+                            label:'Number Of Births Per Quota',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let semi_labels = []
+                semi_labels = data.semi_labels
+                defaultData = data.default
+                let  ctx3 =  document.getElementById("line");
+                let line = new Chart(ctx3, {
+                    type: 'line',
+                    data:{
+                        labels: semi_labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            'rgba(23, 123, 208, 0.95)',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            'rgba(23, 123, 208, 0.95)',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ]
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.male_defaultitems
+                let  ctx4 =  document.getElementById("bar");
+                let bar = new Chart(ctx4, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.quota_male_labels
+                defaultData = data.quota_male_defaultitems
+                let  ctx5 =  document.getElementById("sex_bar_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'line',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        }); 
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.semi_male_labels
+                defaultData = data.semi_male_defaultitems
+                let  ctx5 =  document.getElementById("sex_semi_annual_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.female_defaultitems
+                let  ctx4 =  document.getElementById("female_bar");
+                let bar = new Chart(ctx4, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.quota_male_labels
+                defaultData = data.quota_female_defaultitems
+                let  ctx5 =  document.getElementById("female_sex_bar_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'line',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        }); 
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.semi_male_labels
+                defaultData = data.semi_female_defaultitems
+                let  ctx5 =  document.getElementById("female_sex_semi_annual_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });        
+    {% endblock %}
+</script>
 {% include "birth_record/navbar.html" %}
+<style>
+    #searchForm{
+        padding: 1rem; 
+        display: grid; 
+        grid-template-columns: 95% 5%;
+    }
+    #searchForm input{
+        width: 100%;
+        background-color: #9e9e9e9e;
+        border-radius: 25px;
+        border-bottom: 0px;
+
+        margin: 0px 0px 8px 0;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        -webkit-appearance: textfield;
+        text-transform: capitalize;
+    }
+    #search input:placeholder{
+        color: white;
+        padding: 5px;
+    }
+    #searchForm button{
+        color: black;
+        background: #cacaca6e;
+        box-shadow: none;
+        margin-left: 53rem;
+        border-radius: 45%;
+        margin-top: -5.5rem;
+        background: #cacaca6e;
+        box-shadow: none;
+
+    }
+
+</style>
+
+{% comment %} <div class="row">
+    <div class="col s12">
+        <div class="card white">
+            <form action="" method="get" id="searchForm">
+                <div class="input-field">
+                    <input type="text" name="q" id="q" placeholder="filter by Sex...">
+                <button type="submit" class="btn"><i class="material-icons">search</i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> {% endcomment %}
+<div class="row">
+    <div class="col s12">
+        <h3>Analysis By Month.</h3>
+        <div class="col s4">
+            <h5>Year pie Graph.</h5>
+            <canvas id="pie" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h5>Quota Bar Graph.</h5>
+            <canvas id="myChart" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h5>Semi-Annual Line Graph.</h5>
+            <canvas id="line" class="white" height="400" width="400"></canvas>
+        </div>
+    </div>
+    <div class="col s12">
+        <h3>Analysis By Sex.</h3>
+        <h6>Male</h6>
+        <div class="col s4">
+            <h4>Male Bar Area Graph.</h4>
+            <canvas id="bar" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Male Quota Line Area Graph.</h4>
+            <canvas id="sex_bar_quota" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Male Semi Annual Bar Area Graph.</h4>
+            <canvas id="sex_semi_annual_quota" class="white" height="400" width="400"></canvas>
+        </div>
+    </div>
+    <div class="col s12">
+        <h3>Analysis By Sex.</h3>
+        <h6>Female</h6>
+        <div class="col s4">
+            <h4>Female Bar Area Graph.</h4>
+            <canvas id="female_bar" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Female Quota Line Area Graph.</h4>
+            <canvas id="female_sex_bar_quota" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Female SemiAnnual Bar Area Graph.</h4>
+            <canvas id="female_sex_semi_annual_quota" class="white" height="400" width="400"></canvas>
+        </div>
+    </div>
+    {% comment %} <div class="col s3">
+        <form action="/Record/AnalysisBirth/" method="POST">
+        {% csrf_token %}
+            <input type="number" class="validate white" name="q" placeholder="Filter By Year...eg. 2019">
+            <button class="btn" type="submit" name="submit">Filter</button>
+        </form>
+    </div> {% endcomment %}
+
+</div>
+
 {% if query %}
-    <p> You searched for {{query}}</p>
+    <p> You searched for {{query}} {{yearitems}}</p>
 {% else %}
     Nothing Was Searched
 {% endif %}

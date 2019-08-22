@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # rest frame work
+    'rest_framework',
+    # packages
+    'DataAnalysis',
     # my apps
     'Mcrh_Birth_Record',
     'searches',

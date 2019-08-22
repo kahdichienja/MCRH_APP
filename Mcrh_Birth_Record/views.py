@@ -75,3 +75,7 @@ def search_by_id(request):
         'id_number': id_number,
     }
     return render(request, "search_test_view.html", context)
+
+
+def record_data_analysis(request):
+    return render(request, 'record_data_analysis.html')

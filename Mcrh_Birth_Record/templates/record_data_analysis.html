@@ -1,0 +1,293 @@
+{% extends "birth_record/base.html" %}
+{% load static %}
+{% block content %}
+<script>
+    {% block jquery %}
+        {% comment %} let endpoint = '/api/data/' {% endcomment %}
+        let endpoint2 = '/api/data_analysis/'
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.default
+                let  ctx2 =  document.getElementById("radar");
+                let radar = new Chart(ctx2, {
+                    type: 'radar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.default
+                let  ctx =  document.getElementById("myChart");
+                let myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.default
+                let  ctx3 =  document.getElementById("line");
+                let line = new Chart(ctx3, {
+                    type: 'line',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.default
+                let  ctx4 =  document.getElementById("polarArea");
+                let polarArea = new Chart(ctx4, {
+                    type: 'polarArea',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+    {% endblock %}
+</script>
+{% include "birth_record/navbar.html" %}
+<div class="row">
+    <div class="col s12">
+        <div class="col s6">
+            <h4>Radar Graph.</h4>
+            <canvas id="radar" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s6">
+            <h4>Bar Graph.</h4>
+            <canvas id="myChart" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s6">
+            <h4>Line Graph.</h4>
+            <canvas id="line" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s6">
+            <h4>Polar Area Graph.</h4>
+            <canvas id="polarArea" class="white" height="400" width="400"></canvas>
+        </div>
+    </div>
+    {% comment %} <div class="col s3">
+        <form action="/Record/AnalysisBirth/" method="POST">
+        {% csrf_token %}
+            <input type="number" class="validate white" name="q" placeholder="Filter By Year...eg. 2019">
+            <button class="btn" type="submit" name="submit">Filter</button>
+        </form>
+    </div> {% endcomment %}
+
+</div>
+
+
+{% endblock %}

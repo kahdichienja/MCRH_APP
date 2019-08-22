@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from searches.views import search_view
+from searches.views import search_view, root_url, MegaChartData #mega_search
+
+from DataAnalysis.views import ChartData, get_data
 
 urlpatterns = [
+    path('', root_url),
     path('admin/', admin.site.urls),
+    path('api/data_analysis/', ChartData.as_view(), name='ChartData'),
+    path('api/data/', get_data, name="get_data"),
     path('Record/', include('Mcrh_Birth_Record.urls')),
-    path('search/', search_view)
+    path('search/', search_view),
+    # path('mega_search/', mega_search),
+    path('mega_search/', MegaChartData.as_view(), name="MegaChartData"),
 ]
