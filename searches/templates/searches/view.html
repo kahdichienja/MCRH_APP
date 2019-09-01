@@ -576,6 +576,388 @@
                 console.log(err_data)
             }
         });        
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.single_defaultitems
+                let  ctx4 =  document.getElementById("single_bar");
+                let bar = new Chart(ctx4, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.quota_single_labels
+                defaultData = data.quota_single_defaultitems
+                let  ctx5 =  document.getElementById("single_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'line',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.semi_single_labels
+                defaultData = data.semi_single_defaultitems
+                let  ctx5 =  document.getElementById("single_semi_annual_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        }); 
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                let defaultData = []
+                let labels = []
+                labels = data.labels
+                defaultData = data.twin_defaultitems
+                let  ctx4 =  document.getElementById("twin_bar");
+                let bar = new Chart(ctx4, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.quota_twin_labels
+                defaultData = data.quota_twin_defaultitems
+                let  ctx5 =  document.getElementById("twin_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'line',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: endpoint2,
+            success: function(data){
+                {% comment %} By sex ( male) {% endcomment %}
+                let defaultData = []
+                let labels = []
+                labels = data.semi_twin_labels
+                defaultData = data.semi_twin_defaultitems
+                let  ctx5 =  document.getElementById("twin_semi_annual_quota");
+                let bar = new Chart(ctx5, {
+                    type: 'bar',
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:'Number Of Births Per Month',
+                            data: defaultData,
+                            backgroundColor:[
+                            '#2173fa',
+                            '#7ce0d7',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#6898e6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderColor:[
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            '#7ce0d7',
+                            '#2173fa',
+                            '#6898e6',
+                            '#e0b87c80',
+                            '#7a13eab0',
+                            '#ea5813a6',
+                            ],
+                            borderWith: 1
+                        }]
+                    },
+                    optiions:{
+                        scales:{
+                            yaxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            },
+            error: function(err_data){
+                console.log("Erro:")
+                console.log(err_data)
+            }
+        }); 
     {% endblock %}
 </script>
 {% include "birth_record/navbar.html" %}
@@ -651,15 +1033,15 @@
         <h3>Analysis By Sex.</h3>
         <h6>Male</h6>
         <div class="col s4">
-            <h4>Male Bar Area Graph.</h4>
+            <h4>Bar Graph.</h4>
             <canvas id="bar" class="white" height="400" width="400"></canvas>
         </div>
         <div class="col s4">
-            <h4>Male Quota Line Area Graph.</h4>
+            <h4>Quota Line Graph.</h4>
             <canvas id="sex_bar_quota" class="white" height="400" width="400"></canvas>
         </div>
         <div class="col s4">
-            <h4>Male Semi Annual Bar Area Graph.</h4>
+            <h4>Semi Bar Graph.</h4>
             <canvas id="sex_semi_annual_quota" class="white" height="400" width="400"></canvas>
         </div>
     </div>
@@ -667,16 +1049,48 @@
         <h3>Analysis By Sex.</h3>
         <h6>Female</h6>
         <div class="col s4">
-            <h4>Female Bar Area Graph.</h4>
+            <h4>Bar Graph.</h4>
             <canvas id="female_bar" class="white" height="400" width="400"></canvas>
         </div>
         <div class="col s4">
-            <h4>Female Quota Line Area Graph.</h4>
-            <canvas id="female_sex_bar_quota" class="white" height="400" width="400"></canvas>
+            <h4>Quota Line Graph.</h4>
+            <canvas id="female_sex_bar_quota" class="white" height ="400" width="400"></canvas>
         </div>
         <div class="col s4">
-            <h4>Female SemiAnnual Bar Area Graph.</h4>
+            <h4>Semi Bar Graph.</h4>
             <canvas id="female_sex_semi_annual_quota" class="white" height="400" width="400"></canvas>
+        </div>
+        </div>
+    <div class="col s12">
+        <h3>Analysis By Type Of Birth.</h3>
+        <h6>Single</h6>
+        <div class="col s4">
+            <h4>Bar Graph.</h4>
+            <canvas id="single_bar" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Quota Line Graph.</h4>
+            <canvas id="single_quota" class="white" height ="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Semi Bar Graph.</h4>
+            <canvas id="single_semi_annual_quota" class="white" height="400" width="400"></canvas>
+        </div>
+    </div>
+    <div class="col s12">
+        <h3>Analysis By Type Of Birth.</h3>
+        <h6>Twin</h6>
+        <div class="col s4">
+            <h4>Bar Graph.</h4>
+            <canvas id="twin_bar" class="white" height="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Quota Line Graph.</h4>
+            <canvas id="twin_quota" class="white" height ="400" width="400"></canvas>
+        </div>
+        <div class="col s4">
+            <h4>Semi Bar Graph.</h4>
+            <canvas id="twin_semi_annual_quota" class="white" height="400" width="400"></canvas>
         </div>
     </div>
     {% comment %} <div class="col s3">

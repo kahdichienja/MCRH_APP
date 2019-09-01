@@ -8,7 +8,7 @@
             <form action="/Record/searchlisttest/" method="POST" style="border: 0; padding:0;display: inline-block">
                 {% csrf_token %}
                 <div class="center" style="position: absolute; left: 4%; transform: translate(-50%, -50%); top: 50%;" >
-                    <input type="text" class="hide-on-med-and-down" name="id_number" id="searchInput" placeholder="Search By Date Of Birth..eg Aug 15, 2019">
+                    <input type="text" class="hide-on-med-and-down validate" required="true" name="id_number" id="searchInput" placeholder="Search By Date Of Birth..eg Aug 15, 2019">
                     <button type="submit" class="btn hide-on-med-and-down" style="box-shadow: none; -webkit-box-shadow: none; margin-left:115%; margin-top: -10.57%;background: #cacaca6e;">
                         Search
                     </button>

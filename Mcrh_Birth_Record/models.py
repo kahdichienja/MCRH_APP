@@ -53,10 +53,17 @@ class Child(models.Model):
         return self.serial_number_b1
         
 
+    def clean_dob(self, *args, **kwargs):
+        dob = self.cleaned_data.get('dob')
+        if dob > datetime.now:
+            raise forms.ValidationError("Date cannot be more than today")
+        return dob
+          
     # @property
     # def get_content_type(self):
     #     instance = self
     #     content_type = ContentType.objects.get_for_model(instance.__class__)
     #     return content_type
 
-
+# p2 = Parent(mother_fname='Jane', mother_mname='Smith', mother_lname='Teresa',notified_name='Teresa', notified_id='344573943', notified_date='Aug 26, 2019')
+# c = p2.child_set.create(serial_number_b1='422243212', child_fname='ascmaskj', child_mname='jxak', child_lname='djlknjsd', dob='Jan 21, 2019', sex='Male', type_of_birth='Single', other_type_of_birth='',nature_of_birth='Born Dead', place_of_birth='MCRH', place_of_birth_sub_county='Suna East', created_at=datetime.now())

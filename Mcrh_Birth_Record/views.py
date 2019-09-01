@@ -41,6 +41,7 @@ def birth_record_detailed(request, serial_number_b1):
 
 @staff_member_required
 def search_by_dob(request):
+    context ={}
     searchForm = SearchForm(request.POST or None)
     if searchForm.is_valid():
         id_number = searchForm.cleaned_data.get('id_number')
@@ -51,11 +52,11 @@ def search_by_dob(request):
         paginator = Paginator(children_searches, 5)
         page = request.GET.get('page')
         children_searches = paginator.get_page(page)
-    context={
-        'children_searches': children_searches,
-        'count_children_searches': count_children_searches,
-        'id_number': id_number,
-    }
+        context={
+            'children_searches': children_searches,
+            'count_children_searches': count_children_searches,
+            'id_number': id_number,
+        }
     return render(request, "search_test_view.html", context)
 
 @staff_member_required
