@@ -16,5 +16,26 @@ $ virtualenv env
 
 # activate the env
 $ source env/bin/activate
+$ (env)/Desktop/test/ cd MCRH_APP
+
+
+```
+### Installing Packages
+```python
+
+$ source env/bin/activate
+$ (env)/Desktop/test/ cd MCRH_APP
+$ (env)/Desktop/test/MCRH_APP pip install -r requirements.txt
+
+# run migrations
+$ python manage.py migrate
+
+
+# create super user
+$ python manage.py createsuperuser
+
+# run server
+$ python manage.py runserver
+
 
 ```
